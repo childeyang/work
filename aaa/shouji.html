@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>展示</title>
+	<mate charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="shouji.css">
+	<!-- <script src="shouji.js"></script> -->
+	<script src="jquery.js"></script>
+</head>
+<body>
+	<div class="sm">
+		<span class="sp">导航</span>
+		<div class="bot">
+			<a href="#">AP</a>
+			<br/>
+			<a href="#">AD</a>
+			<br/>
+			<a href="#">AQ</a>
+			<br/>
+			<a href="#">AR</a>
+			<br/>
+		</div>
+	</div>
+	<div class="daohang">
+		<span id="a">AD</span>
+		<span id="a">AR</span>
+		<span id="a">AQ</span>
+		<span id="a">AP</span>
+	</div>
+	<p>欢迎来到阳哥联盟</p>
+	<div class="yidong">
+		<div style="background:url('1.jpg');" class="dong"></div>
+		<div style="background:url('2.jpg');" class="dong"></div>
+		<div style="background:url('4.jpg');" class="dong"></div>
+		<div style="background:url('5.jpg');" class="dong"></div>
+	</div>
+	<div class="liebiao">
+		<ul>
+			<li>欢迎来到德莱联盟</li>
+			<li>德莱文一挑五啦！</li>
+			<li>德莱文干掉了四个</li>
+			<li>德莱文三刀秒人啦！</li>
+			<li>德莱文完美五杀秀！</li>
+		</ul>
+	</div>
+	<div class="tupian">
+		<img src="2.jpg">
+		<img src="4.jpg">
+		<img src="5.jpg">
+		<img src="6.jpg">
+		<img src="7.jpg">
+	</div>
+<script type="text/javascript">
+	$(function(){
+		var w=document.body.clientWidth;
+		var i=0
+		var a=100;
+		var si= setInterval(function(){
+			i++;
+			$(".yidong").animate({right:i*100+"%"},"slow");
+			if (i>=3) {
+				i=-1;
+			};
+		},2000);
+
+		if (w<=769){
+			$(".daohang").hide();
+			$(".sm").show();
+			};
+
+		$(window).resize(function(){
+			var w=document.body.clientWidth;	
+			// console.log(w);
+		if(w<=769){
+			$(".daohang").hide();
+			$(".sm").show();
+		}else{
+			$(".daohang").show();
+			$(".sm").hide();
+		}
+		});
+
+		$(".sp").click(function(){
+			$(".bot").slideToggle(800);
+		})
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<script src="jquery.js"></script>
+	<title>Document</title>
+	<style type="text/css">
+		html,body{
+			width: 100%;
+			margin:0;
+			padding: 0; 
+			font-size: 20px;
+			overflow-x: hidden;
+		}
+		.top{
+			width: 400%;
+			height: 630px;
+			position:relative;
+		}
+		.top>.sty{
+			float:left;
+			text-align: center;
+			line-height: 630px;
+			font-size: 3rem;
+			font-family: 微软雅黑;
+			color: hsl(246, 8%, 16%);
+		}
+		/*.ndiv{
+			width: 100%;	
+			position:relative;
+			width: 100%;
+			top:-200px;
+			left: 45%;
+		}
+		.ndiv>ul>li{
+			font-size: 1.5rem;
+			float: left;
+			margin-right: 15px;
+			color: #000;
+		}*/
+		.nav{
+			position:absolute;
+			width:100%;
+			height:60px;
+			z-index :1;
+		}
+		.nav>ul{
+			width: 100%;
+			height: 100%;
+			font-size: 0px;
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+		.nav>ul>li{
+			font-size:1.5rem;
+			display:inline-block;
+			width: 20%;
+			text-align:center;
+			background:-webkit-linear-gradient(90deg,rgba(29, 29, 31, 0.4),rgba(52, 55, 58, 0.4),rgba(43, 46, 51, 0.4),rgba(36, 45, 45, 0.4));
+			transition:0.5s;
+		}
+		nav>ul>li:hover{
+			background:skyblue;
+			color: #9C7777;
+			border-radius:25px;
+		}
+		.sm{
+			display: none;
+			width: 100%;
+			position:absolute;
+			z-index :1;
+			background:rgba(29, 25, 25, 0.6);
+		}
+		.sm>span{
+			width: 100%;
+			font-size: 1.5rem;
+			cursor: pointer;
+			background:-webkit-linear-gradient(0deg,rgba(29, 25, 25, 0.6),rgba(105, 69, 69, 0.8),rgba(95, 25, 43, 0.91),rgba(29, 25, 25, 0.6));
+		}
+		.sm>div{
+			display: none;
+		}
+		.sm>div>a{
+			text-decoration: none;
+		}
+		.mo{
+			position: absolute;
+			width: 100%;
+			
+		}
+		.la{
+			height: 100px;
+			width: 24%;
+			/*border: 1px solid #000;*/
+			background: rgba(29, 25, 25, 0.2);
+			margin:0 calc(3%/8);
+			float: left;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<nav class="nav">
+		<ul>
+			<li class="nli"><strong>Apple<><>
+			<li class="nli">apple<>
+			<li class="nli">apple<>
+			<li class="nli">apple<>
+			<li class="nli">apple<>
+		</ul>
+	</nav>
+	<div class="sm">
+		<span class="sp"> <strong>Apple<>
+			<br/>
+		</span>
+		<div class="bot">
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+			<br/>
+			<a href="#">apple</a>
+		</div>
+	</div>
+	<div class="top">
+		<div style="width: 25%; height: 100%; background:red;" class="sty">
+			Apple
+		</div>
+		<div style="width: 25%; height: 100%; background:#780;" class="sty">
+			Apple
+		</div>
+		<div style="width: 25%; height: 100%; background:#324;" class="sty">
+			Apple
+		</div>
+		<div style="width: 25%; height: 100%; background:#564;" class="sty">
+			Apple
+		</div>
+		
+	</div>
+	<div class="mo">
+			<div class="la">
+				<p>Apple</p>
+			</div>
+				<div class="la">
+				<p>Apple</p>
+			</div>
+				<div class="la">
+				<p>Apple</p>
+			</div>
+				<div class="la">
+				<p>Apple</p>
+			</div>
+		</div>
+	<!-- <nav class="ndiv">
+		<ul>
+			<li class="dli"><>
+			<li class="dli"><>
+			<li class="dli"><>
+			<li class="dli"><>
+		</ul>
+	</nav> -->
+	
+	
+	<script type="text/javascript">
+		$(function(){
+			var i=0;
+			// var dli=$(".dli");
+			// console.log(dli[1]);
+			var si= setInterval(function(){
+				i++;
+				// console.log(dli[0])
+				$(".top").animate({right:i*100+"%"},"slow");
+				// dli[i].style.color="red";
+				if (i>=3) {
+					i=-1;
+				};
+			},2000);
+			if (window.screen.width<=769||document.body.clientWidth<=769) {
+					$(".nav").hide();		
+					$(".sm").show();
+					$(".la").css({"width":"100%","margin-top":"1%"});
+
+			};		
+
+			$(window).resize(function(){
+			if (window.screen.width<=768||document.body.clientWidth<=768) {
+					$(".nav").hide();
+					$(".sm").show();
+					$(".la").css({"width":"100%","margin-top":"1%"});
+			}else{
+				$(".nav").show();
+				$(".sm").hide();
+				$(".la").css({"width":"24%","margin-top":0});
+			}
+			})
+			$(".sp").click(function(){
+				$(".bot").slideToggle(800);
+			})
+			
+		})
+	</script></body>
+<ml>

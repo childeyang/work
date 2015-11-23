@@ -1,0 +1,100 @@
+html,body{
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding: 0;
+	background: #ccc;
+}
+p{
+	margin-top: 5%;
+	font-size: 30px;
+	color: #fff;
+}
+.sm{
+	margin-top: -4%;
+	display: none;
+	width: 100%;
+	position:absolute;
+	z-index :1;
+	background:rgba(41, 80, 189, 0.6);
+}
+.sp{
+	width: 100%;
+	font-size: 1.5rem;
+	color: red;
+	cursor: pointer;
+	background:-webkit-linear-gradient(0deg,rgba(29, 25, 25, 0.6),rgba(105, 69, 69, 0.8),rgba(95, 25, 43, 0.91),rgba(29, 25, 25, 0.6));
+}
+.bot{
+	display: none;
+	text-align: center;
+}
+.bot>a{
+	text-decoration: none;
+	color: red;
+}
+
+
+.daohang{
+	margin-top: 2%;
+	background: #5F9CCE;
+}
+.daohang>span{
+	font-size: 50px;
+	background-color: #5F9CCE;
+	color: #DE1051;	
+	margin-left:13%;
+}
+#a:hover{
+	color: #fff;
+	border: 3px solid #2410DE;
+}
+.yidong{	
+	width: 400%;
+	height: 50%;
+	position: relative;
+}
+.dong{
+	height: 100%;
+	width: 25%;
+	float: left;
+}
+.yidong:hover{
+	cursor:pointer;
+}
+.yidong>img{
+	display: inline-block;
+	width: 100%;
+	height: 100%;			
+	text-align: center;			
+}
+ul{
+	list-style-type: none;
+}
+li{
+	display: inline-block;
+	width: 10%;
+	font-size: 15px;
+	color: #D83166;
+	text-align: center;
+	margin: 0 2.5%;
+	border-bottom: 3px solid rgba(222, 130, 16, 0.38);
+}
+li:hover{
+	color: #fff;
+	cursor:pointer;
+}
+.tupian{
+	width: 70%;
+	margin:10% auto;
+}
+.tupian>img{
+	display: inline-block;
+	width: 100%;
+	height: 100%;			
+	text-align: center;	
+	margin-top: 2%;		
+}
+.tupian>img:hover{
+	cursor:pointer;
+}
